@@ -1,0 +1,55 @@
+.ssss{
+    text-align: center;
+    display: grid;
+
+}
+body{
+    background: white;
+}
+nav {
+    background:whitesmoke;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 22px;
+    box-shadow: 2px 2px 20px rgba (0,0,0,0.3);
+}
+    nav>a{
+    color: black ;
+text-decoration: none;
+padding: 9px 16px;
+border-radius: 22px;
+}
+nav > a:hover{
+transition: 0.5s;
+background: rgb(56, 130,209);
+color: white;
+
+}
+/*حجم خط اسم المتجر والتفاصيل*/
+.title{
+    
+    font-size: 40px;
+}
+/*خصائص اسم المتجر*/
+.aoo{
+    
+    font-size:90px ;
+    background: linear-gradient(to right ,#640005de 0%,#2e66ff 100%);
+    background-clip: text;
+    color: transparent;
+        margin: auto;
+}
+/*خصائص جملة تفاصيل المحلة */
+h6{
+    
+    font-size:30px ;
+    background: linear-gradient(to right ,#640005 0%,#2e66ff 100%);
+    background-clip: text;
+    color: transparent;
+        margin: auto;
+}
+
+
+

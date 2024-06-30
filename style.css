@@ -1,0 +1,390 @@
+body{
+    margin: 0;
+    font-family: Poppins;
+}
+svg{
+    width: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: #2F2F2F;
+}
+/*عند الوقوف على أي زر يتحول شكل مؤشر الفأرة */
+button{
+    cursor: pointer;
+}
+/*خواص الكونترينر الحاوي على المنتجات*/
+.container{
+    width: 900px;
+    margin: auto;
+    max-width: 90vw;
+    text-align: center;
+    padding-top: 10px;
+    transition: 0.5s;
+}
+/*هنا خواص الهيدر الحاوي على اسم المتجر وتفاصيل المتجر  */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+/*تموضع السلة */
+.icon-cart{
+    position: relative;
+}
+/*خواص زر زيادة وانقاص المشتريات من السلة */
+.icon-cart span{
+    position: absolute;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    top: 50%;
+    right: -20px;
+}
+/*حجم خط اسم المتجر والتفاصيل*/
+.title{
+    
+    font-size: 40px;
+}
+/*خصائص اسم المتجر*/
+.aoo{
+    text-align: center;
+    display: grid;
+    font-size:90px ;
+    background: linear-gradient(to right ,#640005de 0%,#2e66ff 100%);
+    background-clip: text;
+    color: transparent;
+        margin: auto;
+}
+.hj{
+    text-align: center;
+    display:flex;
+    }
+
+    /*خصائص جملة تفاصيل المحلة */
+h6{
+    
+    font-size:30px ;
+    background: linear-gradient(to right ,#640005 0%,#2e66ff 100%);
+    background-clip: text;
+    color: transparent;
+        margin: auto;
+}
+/*خصائص وشكل اسماء المنتجات داخل سلة المشتريات المنبثقة */
+.cartTab{
+    width: auto;
+    max-width: 100%;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    top: 0;
+    right: 0px;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+}
+.cartTab h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+/*خصائص تموضع ازارا الاغلاق وفتح التحقق الموجودة في السلة المنبثقة  */
+.cartTab .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+/*خصائص زر التحقق الموجودة في السلة المنبثقة  */
+.cartTab button{
+    background-color: #E8BC0E;
+    border: none;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+}
+/*خصائص زر الإغلاق الموجودة في السلة المنبثقة  */
+.cartTab .close{
+    background-color: #eee;
+}
+/*خصائص قائمة المشتريات في السلة المنبثقة  */
+.listCart{
+    overflow: auto;
+}
+.listCart::-webkit-scrollbar{
+    width: 0;
+}
+/* تموضع قائمة المشتريات المنبثقة وتأثير حركتها  */
+.cartTab{
+    right: -400px;
+    transition: 0.5s;
+}
+body.activeTabCart .cartTab{
+    right: 0;
+}
+/*تحرك الكونتينر عند الضغط على ايقونة قائمة المشتريات  */
+body.activeTabCart .container{
+    transform: translateX(-250px);
+}
+/*  */
+/*خصائص صور المنتجات  */
+.listProduct .item img{
+    width: 90%;
+    filter: drop-shadow(0 50px 20px #0009);
+}
+/*خصائص تموضع المنتجات بالكونتينر  */
+.listProduct{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+/*خصائص ولون خلفية كل منتج بالكونتينر  */
+.listProduct .item{
+    background-color: #EEEEE6;
+    padding: 20px;
+    border-radius: 20px;
+}
+/*خصائص اسم المنتجات  */
+.listProduct .item h2{
+    font-weight: 500;
+    font-size: large;
+}
+/*خصائص سعر المنتجات  */
+.listProduct .item .price{
+    letter-spacing: 7px;
+    font-size: small;
+}
+/*خصائص ولون زر اضافة لسلة  المنتجات */
+.listProduct .item button{
+    background-color: #353432;
+    color: #eee;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+/*  */
+/*خصائص صوة المنتجات الموجودة بسلة المنتجات  */
+.listCart .item img{
+    width: 100%;
+}
+/*حصائص وتنسيق كل تفاصيل كل منتج بسلة المنتجات  */
+.listCart .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+/*خصائص ولون زر زيدارة عدد ونقصان المنتج في النافذة المنبثقة  */
+.listCart .quantity span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    color: #555;
+    cursor: pointer;
+}
+/*لون وخصائص عدد الكمية المختارة من المنتج المطلوب الموجود بالنافذة المنبثقة  */
+.listCart .quantity span:nth-child(2){
+    background-color: transparent;
+    color: #eee;
+    cursor: auto;
+}
+/*خصائص وترتيب المنجات المختارة بالقائمة المنثقة  */
+.listCart .quantity{
+    display: flex;
+}
+/*لون خلفية سلةالمشتريات بالنافذة المنبثقة  */
+.listCart .item:nth-child(even){
+    background-color: #eee1;
+}
+/*/////////////////////////////////////////////////////////////////////////*/
+/* detail page */
+
+/*خصائص وتفاصيل صفحة تفاصيل المنتج  */
+.detail{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    text-align: left;
+}
+/*حجم صورة المنتج  */
+.detail .image img{
+    width: 100%;
+}
+/*تموضع صورة المنتج  */
+.detail .image{
+    position: relative;
+}
+/*خصائص وشكل ولون صورة المنتج قبل الضغط  */
+.detail .image::before{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    content: '';
+    background-color: #94817733;
+    z-index: -1;
+    border-radius: 190px 100px 170px 180px;
+    left: calc(50% - 150px);
+    top: 50px;
+
+}
+/*خصائص وتفاصيل اسم المنتج ب صفحة تفاصيل المنتج المنتج  */
+.detail .name{
+    font-size: xxx-large;
+    padding: 40px 0 0 0;
+    margin: 0 0 10px 0;
+    font-size:50px ;
+    background: linear-gradient(to right ,#640005 0%,#2e66ff 100%);
+    background-clip: text;
+    color: transparent;
+        margin: auto;
+}
+/*خصائص وتفاصيل سعر المنتج الموجود بصفحة التفاصيل المنتج*/
+.detail .price{
+    font-weight: bold;
+    font-size: x-large;
+    letter-spacing: 7px;
+    margin-bottom: 20px;
+}/*خصائص وتفاصيل الأزرارالموجودة بصفحة التفاصيل المنتج*/
+.detail .buttons{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+/*خصائص وتفاصيل زر الشيك الموجود بصفحة التفاصيل المنتج*/
+.detail .buttons button{
+    background-color: #eee;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-family: Poppins;
+    font-size: large;
+}
+
+.detail .buttons svg{
+    width: 15px;
+}
+/*خصائص وتفاصيل  لون خلفية 
+ايقونة سلة المشتريات الموجودة بزر ااضافة للسلة الموجود بصفحة التفاصيل المنتج*/
+.detail .buttons span{
+    background-color: #555454;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+/*خصائص وتفاصيل الموجود بصفحة التفاصيل المنتج*/
+.detail .buttons button:nth-child(2){
+    background-color: #2F2F2F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+    box-shadow: 0 10px 20px #2F2F2F77;
+}
+/*حجم خط تفاصيل المنتج الموجودة بصفحة التفاصيل المنتج*/
+.detail .description{
+    
+    font-size:20px ;
+    background: linear-gradient(to right ,#640005 0%,#2e66ff 100%);
+    background-clip: text;
+    color: transparent;
+        margin: auto;
+
+}
+
+/* خصائص قائمة المنزل والمنتجات والتواصل معنا */
+nav {
+    background:whitesmoke;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 22px;
+    box-shadow: 2px 2px 20px rgba (0,0,0,0.3);
+    
+}
+    nav>a{
+    color: black ;
+text-decoration: none;
+padding: 9px 16px;
+border-radius: 22px;
+}
+nav > a:hover{
+transition: 0.5s;
+background: rgb(56, 130,209);
+color: white;
+
+}
+/*حجم خط اسم المتجر والتفاصيل*/
+.title{
+    
+    font-size: 40px;
+}
+/*خصائص اسم المتجر*/
+.aoo{
+    
+    font-size:90px ;
+    background: linear-gradient(to right ,#640005de 0%,#2e66ff 100%);
+    background-clip: text;
+    color: transparent;
+        margin: auto;
+}
+/*خصائص جملة تفاصيل المحلة */
+h6{
+    
+    font-size:30px ;
+    background: linear-gradient(to right ,#640005 0%,#2e66ff 100%);
+    background-clip: text;
+    color: transparent;
+        margin: auto;
+}
+
+/*  */
+
+@media only screen and (max-width: 992px) {
+    .listProduct{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .detail{
+        grid-template-columns:  40% 1fr;
+    }
+}
+
+
+/* mobile */
+@media only screen and (max-width: 767px) {
+    .listProduct{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .detail{
+        text-align: center;
+        grid-template-columns: 1fr;
+    }
+    .detail .image img{
+        width: unset;
+        height: 40vh;
+    } 
+    .detail .name{
+        font-size: x-large;
+        margin: 0;
+
+    }
+    .detail .buttons button{
+        font-size: small;
+    }
+    .detail .buttons{
+        justify-content: center;
+    }
+}
